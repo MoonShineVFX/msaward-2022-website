@@ -1,6 +1,7 @@
 import { useRecoilValue } from 'recoil';
 import { modalState, movieState } from '../atoms/modalAtom';
 
+import SideNavbar from './SideNavbar';
 import Header from './Header'
 import Top3 from './Top3';
 import Section2 from './Section2';
@@ -25,6 +26,7 @@ function App() {
   const {masters} = masterData
   return (
     <div className="App bg-black">
+      <SideNavbar />
       <Header/>
       <Top3 data={top}/>;
       <Section2 data={top10}/>

@@ -2,9 +2,9 @@ import React from 'react'
 
 function Section4({data}) {
   return (
-    <div className='w-9/12 text-white mx-auto w-full flex flex-col justify-center items-center  relative mt-64'>
+    <div name="masters" className='w-9/12 text-white mx-auto flex flex-col justify-center items-center  relative mt-64 xs:w-full xs:mt-16'>
        <div className='text-4xl font-bold'>評審團</div>
-       <div className='w-full grid grid-cols-4 gap-5 mt-16'>
+       <div className='w-full grid grid-cols-4 gap-5 mt-16 xs:grid-cols-2 xs:w-5/6'>
         {
           data.map((item,index)=>{
             const {id, name, title, hashtag, desc} =item

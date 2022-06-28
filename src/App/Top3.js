@@ -10,31 +10,36 @@ function Top3({data}) {
     setCurrentData(data[0])
   },[])  
   return (
-    <div className='w-9/12 text-white mx-auto w-full  bg-[#ffffff04] rounded-lg flex relative mt-20'>
-      <div className='videocontent w-4/6 relative'>
+    <div name="top3" className='w-9/12 text-white mx-auto  bg-[#ffffff04] rounded-lg flex relative mt-20 
+      xs:w-full xs:flex-col'>
+      <div className='videocontent w-4/6 relative xs:w-full'>
         <div className='text-[#73695c] text-3xl font-bold pl-10 mt-10 mb-0 tracking-widest w-2/6'>
           <img src={process.env.PUBLIC_URL+'/images/'+currentData.award_icon} alt="" />
         </div>
-        <AnimatePresence>
-          <motion.div 
-            key={currentData.id}
-            className='bg-black w-full pt-[65%] bg-cover bg-no-repeat bg-center  absolute top-[20%] -left-[6%] border-2 border-[#73695c] ' 
-            initial={{ opacity: 0 , x :"-3vw"  }}
-            animate={{ opacity: 1  , x: 0}}
-            exit={{opacity: 0  , x: "-3vw"}}
-            transition={{delay:0.1 , ease:"easeIn"}}
-            >
-              <ReactPlayer
-                className='react-player absolute top-0 left-0'
-                url={currentData.video_link}
-                width='100%'
-                height='100%'
-              />
+        <div className='relative top-[10%]  -left-[6%] xs:left-0 xs:mt-5 pt-[65%] xs:m-3'>
+          <AnimatePresence>
+            <motion.div 
+              key={currentData.id}
+              
+              className='bg-black w-full pt-[65%] absolute border-2 border-[#73695c]  top-0 left-0' 
+              initial={{ opacity: 0 , x :"-3vw"  }}
+              animate={{ opacity: 1  , x: 0}}
+              exit={{opacity: 0  , x: "-3vw"}}
+              transition={{ease:"easeIn"}}
+              >
+                <ReactPlayer
+                  className='react-player absolute top-0 left-0'
+                  url={currentData.video_link}
+                  width='100%'
+                  height='100%'
+                />
 
-          </motion.div>
-        </AnimatePresence>
+            </motion.div>
+          </AnimatePresence>
+        </div>
+
       </div>
-      <div className='text-sm box-border px-14 py-10 w-3/6  mt-6 transition-all'>
+      <div className='text-sm box-border px-14 py-10 w-3/6  mt-6 transition-all xs:w-full xs:px-5'>
         <div className='menu flex mb-6'>
           {
             data.map((item,index)=>{
@@ -42,7 +47,7 @@ function Top3({data}) {
               return(
                 <div 
                   key={id} 
-                  className={"mr-12 font-100 last:mr-0 cursor-pointer transition hover:border-b-2 " + 
+                  className={"mr-12  xs:mr-5 font-100 last:mr-0 cursor-pointer transition hover:border-b-2 " + 
                     (currentData.id === id ? 'text-orange-500  border-b-2 border-orange-500' :'text-orange-100')}
                   onClick={()=>setCurrentData(data[index])}
                 >
@@ -56,7 +61,7 @@ function Top3({data}) {
           <div className='mb-5'>{currentData.school}</div>
           <div className='mb-8'>{currentData.desc}</div>
           
-          <div>
+          <div className='xs:grid xs:grid-cols-2 xs:gap-2'>
           <AnimatePresence>
             { currentData.review &&
               currentData.review.map((item,index)=>{
