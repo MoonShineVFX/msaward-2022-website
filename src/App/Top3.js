@@ -12,7 +12,9 @@ function Top3({data}) {
   return (
     <div className='w-9/12 text-white mx-auto w-full  bg-[#ffffff04] rounded-lg flex relative mt-20'>
       <div className='videocontent w-4/6 relative'>
-        <div className='text-[#73695c] text-3xl font-bold pl-12 mt-6 mb-0 tracking-widest'>{currentData.award_name}</div>
+        <div className='text-[#73695c] text-3xl font-bold pl-10 mt-10 mb-0 tracking-widest w-2/6'>
+          <img src={process.env.PUBLIC_URL+'/images/'+currentData.award_icon} alt="" />
+        </div>
         <AnimatePresence>
           <motion.div 
             key={currentData.id}
