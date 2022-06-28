@@ -1,24 +1,93 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import ReactPlayer from 'react-player'
+import { motion,AnimatePresence } from "framer-motion"
+function Top3({data}) {
+  const [currentData, setCurrentData] = useState({});
 
-function Top3() {
+
+
+  useEffect(()=>{
+    setCurrentData(data[0])
+  },[])  
   return (
     <div className='w-9/12 text-white mx-auto w-full  bg-[#ffffff04] rounded-lg flex relative mt-20'>
-      <div className='videocontent w-4/6 top-5 right-10 relative'>
-        <div className='text-[#73695c] text-3xl font-bold pl-16 mb-3'>A 賞</div>
-        <div 
-          className='bg-black w-full pt-[65%] bg-cover bg-no-repeat bg-center ' 
-          style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/work01.png'})`}}> </div>
+      <div className='videocontent w-4/6 relative'>
+        <div className='text-[#73695c] text-3xl font-bold pl-12 mt-6 mb-0 tracking-widest'>{currentData.award_name}</div>
+        <AnimatePresence>
+          <motion.div 
+            key={currentData.id}
+            className='bg-black w-full pt-[65%] bg-cover bg-no-repeat bg-center  absolute top-[20%] -left-[6%] border-2 border-[#73695c] ' 
+            initial={{ opacity: 0 , x :"-3vw"  }}
+            animate={{ opacity: 1  , x: 0}}
+            exit={{opacity: 0  , x: "-3vw"}}
+            transition={{delay:0.1 , ease:"easeIn"}}
+            >
+              <ReactPlayer
+                className='react-player absolute top-0 left-0'
+                url={currentData.video_link}
+                width='100%'
+                height='100%'
+              />
+
+          </motion.div>
+        </AnimatePresence>
       </div>
-      <div className='text-sm box-border px-14 py-10 w-3/6  mt-6'>
+      <div className='text-sm box-border px-14 py-10 w-3/6  mt-6 transition-all'>
         <div className='menu flex mb-6'>
-          <div className='mr-16'>A賞 <br />違禁 Outlaw</div>
-          <div className='mr-16'>B賞 <br />違禁 Outlaw</div>
-          <div>C賞 <br />違禁 Outlaw</div>
+          {
+            data.map((item,index)=>{
+              const {id, award_name,title} =item
+              return(
+                <div 
+                  key={id} 
+                  className={"mr-12 font-100 last:mr-0 cursor-pointer transition hover:border-b-2 " + 
+                    (currentData.id === id ? 'text-orange-500  border-b-2 border-orange-500' :'text-orange-100')}
+                  onClick={()=>setCurrentData(data[index])}
+                >
+                  {award_name} <br />{title}
+                </div>
+              )
+            })
+          }
         </div>
         <div className='info mt-16'>
-          <div className='mb-5'>國立臺灣藝術大學 多媒體動畫藝術學系</div>
-          <div className='mb-8'>"以一位「違法的母親」視角出發，在掙扎之中貫徹母愛。Beginning with the perspective of the ""Unlawful Mother"", motherly love was woven between struggle."</div>
-          <div className='rounded-full border-2 px-4 py-2 w-24 border-zinc-500 hover:border-white'>詳細資料</div>
+          <div className='mb-5'>{currentData.school}</div>
+          <div className='mb-8'>{currentData.desc}</div>
+          
+          <div>
+          <AnimatePresence>
+            { currentData.review &&
+              currentData.review.map((item,index)=>{
+                return(
+                  
+                  <motion.div 
+                    key={index}
+                    className="w-full p-5 bg-zinc-900 mb-5" 
+                    initial={{ opacity: 0   }}
+                    animate={{ opacity: 1 }}
+                    exit={{opacity: 0  }}
+                    transition={{delay:`${item.id}/5`  , ease:"easeIn"}}
+                  >
+                    <p className="mb-4"> 
+                      <span className="text-primary-900">"</span>{item.desc}
+                      <span className="text-primary-900">"</span>
+                    </p>
+                    <div className="flex items-center"> 
+                      <img alt={item.name} className="w-10 mr-4 rounded-full bg-neutral-500" src={process.env.PUBLIC_URL+'/images/master/p0'+item.id+'.png'}/>
+                      <div className="flex flex-col items-start"> 
+                        <span className="mb-1 text-xs font-bold">{item.name}</span> 
+                        <div className="text-xs text-zinc-300"> {item.title} </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                  
+                )
+              })
+            }
+          </AnimatePresence>
+          </div>
+          
+
         </div>
       </div>
     </div>
