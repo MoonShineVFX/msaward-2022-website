@@ -11,7 +11,7 @@ function Section4({data}) {
             return(
               <div key={id} className='w-full bg-[#ffffff04] rounded-sm p-5 text-center borderstyle borderstyle_draw '>
                 <div 
-                  className='bg-cover bg-no-repeat bg-center w-20 h-20 rounded-full border-4 border-white mx-auto mb-5'
+                  className='bg-cover bg-no-repeat bg-center w-20 h-20 rounded-full border-2 border-white mx-auto mb-5'
                   style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/master/p0'+id+'.png'})`}}
                 ></div>
                 <div className='text-sm font-bold'>{name} ／{title}</div>

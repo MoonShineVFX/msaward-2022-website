@@ -2,17 +2,21 @@ import React from 'react'
 
 function Section5() {
   return (
-    <div name="gift" className='w-9/12 text-white mx-auto w-full flex flex-col justify-center items-center  relative mt-64 xs:w-full xs:mt-16'>
-      <div className='flex w-3/5 justify-center items-center mb-16 xs:flex-col xs:w-5/6'>
-        {/* <div className='text-4xl font-bold'>夢想 × ROG <span className='text-red-600'>MAX</span>！禮物軍團</div>
-         */}
-        <div className='w-1/3 mr-20'>
-         <img src={process.env.PUBLIC_URL+'/images/max.png'} alt="" />
+    <div name="gift" className='w-9/12 text-white mx-auto flex flex-col justify-center items-center  relative mt-64 xs:w-full xs:mt-16'>
+      <div className='flex w-3/5 justify-between items-center mb-2  xs:w-5/6'>
+
+        <div className='flex items-center '>
+          <img src={process.env.PUBLIC_URL+'/images/max.png'} alt="" className='h-20 mr-5 xs:h-14'/>
+          <div className='text-4xl font-bold w-3/5 xs:text-xl'>夢想 × ROG <span className='text-red-600'>MAX</span>！禮物軍團</div>
+        
         </div>
-        <div className='w-24 xs:mr-auto xs:mt-5'>
-          <div className='text-xs text-zinc-400'>贊助單位</div>
+        <div className='w-24  xs:mx-auto xs:mt-0 xs:w-20 '>
+          <div className='text-xs text-zinc-400 xs:hidden'>贊助單位</div>
           <img src={process.env.PUBLIC_URL+'/images/ROG_Logo.svg'} alt="" />
         </div>
+      </div>
+      <div className='w-2/5 text-xs text-center text-zinc-400 my-6 xs:w-4/5'>
+        前三名獲獎同學，將依名次分別獲得由 ROG 贊助 の MAX! 禮物軍團，且還能與所屬校系同享 ASUS ProArt 創作者系列指定產品購買優惠。
       </div>
       <div className='w-full my-6'>
         <div className='w-3/5 bg-[#ffffff04] rounded-sm p-6 ml-auto relative  mb-32 borderstyle borderstyle_center xs:w-5/6 xs:mx-auto xs:mb-20'>
@@ -89,7 +93,7 @@ function Section5() {
 
           </div>
 
-          <div className='w-3/5 absolute top-12 -right-28 z-10 xs:w-full xs:right-0 xs:top-6 xs:relative xs:mx-auto'>
+          <div className='w-3/6 absolute top-10 -right-28 z-10 xs:w-full xs:right-0 xs:top-6 xs:relative xs:mx-auto'>
             <img src={process.env.PUBLIC_URL+'/images/gift/product3.png'} alt="" />
           </div>
            

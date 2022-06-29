@@ -33,9 +33,7 @@
 .sideNavbar a.active{ color:rgb(255, 255, 255);}
 
 .header{
-  width: 100%;
-  aspect-ratio:16/7;
-  background: url('./assets/header_bg.jpg');
+  
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
