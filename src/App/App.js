@@ -33,7 +33,7 @@ function App() {
       <Section3 data={special_works}/>
       <Section4 data={masters}/>
       <Section5 />
-      <div className='text-zinc-500 text-center text-xs py-10'>MoonShine  © 2022 Copyright. All Rights Reserved.</div>
+      <div className='text-zinc-500 text-center text-xs py-10'>   Copyright © 2022 MoonShine. All Rights Reserved.</div>
       {showModal && <Modal />}
     </div>
   );
