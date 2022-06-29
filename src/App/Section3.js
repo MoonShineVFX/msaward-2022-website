@@ -16,6 +16,7 @@ function Section3({data}) {
             const {id, title, school,desc,video_link,cover} = item
             return(
               <div 
+                key={index}
                 className='bg-black w-[9vw] aspect-[3/4.3] bg-cover bg-no-repeat bg-center relative rounded-md hover:-translate-y-3 transition cursor-pointer duration-200 mb-10  xs:w-[25vw]'
                 style={{backgroundImage: `url(${process.env.PUBLIC_URL +'/images/special_works/'+cover})`}}
                 onClick={() => {
