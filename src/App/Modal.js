@@ -13,18 +13,18 @@ function Modal() {
   };
   return (
     <div
-      className="fixed top-0 left-0 right-0 z-50 mx-auto w-full   h-screen z-20"
+      className="fixed top-0 left-0 right-0 z-50 mx-auto w-full h-screen z-20"
     > 
       <div className='w-full h-screen bg-[#00000091] z-10 absolute' onClick={handleClose}></div>
-      <div className='mt-10 z-40 relative max-w-5xl mx-auto rounded-sm overflow-hidden top-[12%]'>
+      <div className='mt-10 z-40 relative max-w-5xl mx-auto rounded-sm overflow-hidden top-[12%] xs:top-0 xs:mt-0'>
         <button
             onClick={handleClose}
             className="modalButton absolute right-5 top-5 z-40 h-10 w-10 border-none bg-[#181818] hover:bg-1[#181818] flex justify-center items-center rounded-full"
           >
           <HiOutlineX className="h-6 w-6"  color="white"/>
         </button>
-        <div className='flex bg-black'>
-          <div className="relative aspect-video w-3/5">
+        <div className='flex bg-black xs:flex-col'>
+          <div className="relative aspect-video w-3/5 xs:w-full">
             <ReactPlayer
               url={movie?.video_link}
               width="100%"
@@ -34,7 +34,7 @@ function Modal() {
               controls
             />
           </div>
-          <div className="flex flex-col w-2/5 space-x-16 rounded-b-md bg-zinc-900 px-10 py-8 text-white">
+          <div className="flex flex-col w-2/5 space-x-16 rounded-b-md bg-zinc-900 px-10 py-8 text-white xs:w-full">
             <div className="space-y-6 text-lg">
               <div className="flex items-center space-x-2 text-xl  ">
                 <p className="font-semibold text-white-600">
