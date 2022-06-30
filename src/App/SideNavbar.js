@@ -15,14 +15,14 @@ function SideNavbar() {
 
       <div className=' mt-5 xs:flex xs:mt-3 xs:basis-[100%] xs:items-center xs:justify-center'>
         <a href="https://tw.asus.click/ASUSProArt_Student" alt="獲獎同學請填寫下列問券，ASUS ProArt 指定產品購買優惠折扣碼後續將由ASUS寄送提供。" target="_blank" rel="noreferrer"
-            className='block mb-3 xs:mb-0 text-zinc-400 border-dashed border border-zinc-500 rounded-md p-2 hover:text-white hover:border-2 hover:border-white bg-zinc-800 hover:bg-black  ' >
-            <div className='xs:hidden'><BsFillPenFill /> 獲獎同學填寫問卷<br /> 指定產品購買優惠</div>
-            <div className=' hidden xs:block '>獲獎同學問卷</div>
+            className='block mb-3 xs:mb-0 text-zinc-400 border-dashed border border-red-500 rounded-md p-2 hover:text-white  hover:border-red-700 bg-zinc-800 hover:bg-black  ' >
+            <div className='xs:hidden'><BsFillPenFill /> 獲獎同學填寫問卷<br />  ASUS ProArt 指定產品購買優惠</div>
+            <div className=' hidden xs:block '>獲獎同學 ASUS ProArt 優惠 </div>
         </a>
         <a href="https://tw.asus.click/ASUSProArt_School" alt="獲獎同學所屬校系請填寫下列問券， ASUS ProArt 指定產品購買優惠後續將由ASUS專人聯繫服務。" target="_blank" rel="noreferrer"
-            className='block mb-2 xs:mb-0 xs:ml-3 text-zinc-400 border-dashed border border-zinc-500 rounded-md p-2 hover:text-white hover:border-2 hover:border-white bg-zinc-800 hover:bg-black '>
-            <div className='xs:hidden'><BsFillPenFill /> 獲獎同學所屬校系填寫問卷<br /> 指定產品購買優惠</div>
-            <div className='hidden xs:block '>獲獎同學所屬校系問卷</div>
+            className='block mb-2 xs:mb-0 xs:ml-3 text-zinc-400 border-dashed border border-red-500 rounded-md p-2 hover:text-white  hover:border-red-700 bg-zinc-800 hover:bg-black '>
+            <div className='xs:hidden'><BsFillPenFill /> 獲獎同學所屬校系填寫問卷<br /> ASUS ProArt 指定產品購買優惠</div>
+            <div className='hidden xs:block '>獲獎所屬校系 ASUS ProArt 優惠</div>
         </a>
       </div>
     </div>
